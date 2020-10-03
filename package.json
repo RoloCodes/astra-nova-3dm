@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "rimraf  ./.cache && parcel public/index.html --port 8000 --open",
+    "start": "npm run clean && parcel public/index.html --port 8000 --open",
     "dev": "npm start",
-    "build": "rimraf ./dist && parcel build public/index.html --target browser --out-dir dist --public-url ./",
+    "build": "npm run clean && parcel build public/index.html --target browser --out-dir dist --public-url ./",
     "deploy": "npm run build && firebase deploy",
     "clean": "rimraf ./dist && rimraf ./.cache"
   },
