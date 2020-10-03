@@ -7,11 +7,12 @@ Currently hosted at: https://astra-nova-3dm.web.app/
 ## Tools
 
 - 📦 &nbsp;Parcel
-- <img align="center" alt="React" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/react/react.png" />&nbsp;React
+- <img align="center" alt="React" width="24px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/react/react.png" />&nbsp;React
 
 - 💅 &nbsp;Styled Components
+- <img align="center" alt="Firebase" width="24px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/firebase/firebase.png">&nbsp;Firebase
 
-<br />
+  <br />
 
 ## 🚀 Getting started
 
