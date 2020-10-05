@@ -1,6 +1,6 @@
 {
-  "name": "constrained-optimization",
-  "version": "1.0.0",
+  "name": "astra-nova-games",
+  "version": "0.9.2",
   "description": "",
   "main": "index.js",
   "scripts": {
