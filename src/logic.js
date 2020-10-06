@@ -191,6 +191,15 @@ export function calculateScore(students) {
   return score
 }
 
+export function clearStudentChoices(students) {
+  return students.map((student) => {
+    return {
+      ...student,
+      choice: null,
+    }
+  })
+}
+
 export function nodeLog() {
   const args = Array.from(arguments).map((item) => String(item))
   process.stdout.write(args.join(' '))

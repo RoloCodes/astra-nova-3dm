@@ -28,11 +28,9 @@ const App = () => {
       <Books library={library} students={students} />
       <Students
         library={library}
-        setLibrary={setLibrary}
         students={students}
         setStudents={setStudents}
         score={score}
-        setScore={setScore}
       />
     </StyledApp>
   )

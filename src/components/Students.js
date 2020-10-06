@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Button from './Button'
-import { updateStudentChoice } from '../logic'
+import { clearStudentChoices, updateStudentChoice } from '../logic'
 
 const Students = ({ library, students, setStudents, score }) => {
   return (
@@ -51,7 +51,9 @@ const Students = ({ library, students, setStudents, score }) => {
       </div>
       <div className="score-wrapper">Score: {score}</div>
       <div className="button-wrapper">
-        <Button>Submit</Button>
+        <Button onClick={() => setStudents(clearStudentChoices(students))}>
+          Clear All
+        </Button>
       </div>
     </StyledStudents>
   )

@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const Books = ({ library, books }) => {
+const Books = ({ library }) => {
   return (
     <StyledBooks>
       <h2>Books</h2>

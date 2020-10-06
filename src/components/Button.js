@@ -7,7 +7,8 @@ const Button = ({ children, ...props }) => {
 
 const StyledButton = styled.button`
   padding: 20px 30px;
-  border: 2px solid #000;
+  border: 2px solid ${({ stroke }) => stroke || '#000'};
+  color: ${({ text }) => text || '#000'};
   background: transparent;
   font-weight: 400;
   font-size: 16px;
@@ -17,8 +18,8 @@ const StyledButton = styled.button`
   transition: all 0.3s;
 
   &:hover {
-    background-color: #000;
-    color: #fff;
+    background-color: ${({ fill }) => fill || '#000'};
+    color: ${({ textHover }) => textHover || '#fff'};
   }
 `
 
