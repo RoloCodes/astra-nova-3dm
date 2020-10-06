@@ -5,15 +5,17 @@ const Books = ({ library, books }) => {
   return (
     <StyledBooks>
       <h2>Books</h2>
-      {library.map(({ name, id, quantity, color }) => (
+      {library.map(({ name, id, quantity, initialQuantity, color }) => (
         <div className="book" key={`books-${id}`}>
           <div className="name">{name}:</div>
-          <div className="circles">{displayQuantity(quantity, color)}</div>
+          <div className="circles">
+            {displayQuantity(quantity, initialQuantity, color)}
+          </div>
         </div>
       ))}
       <p>
         Click the numbers below to select the books you'd like each student to
-        receive
+        receive.
       </p>
     </StyledBooks>
   )
@@ -57,14 +59,15 @@ const StyledCircle = styled.div`
   background-color: ${({ color }) => `rgb(${color})` || 'black'};
 `
 
-const displayQuantity = (quantity, color) => {
-  const solution = []
-  for (let i = 0; i < quantity; i++) {
-    solution.push(
-      <StyledCircle color={color} key={'color' + String(i)}></StyledCircle>
+const displayQuantity = (quantity, initialQuantity, color) => {
+  const circles = []
+  for (let i = 0; i < initialQuantity; i++) {
+    let finalColor = quantity < i + 1 ? '80, 80, 80' : color
+    circles.push(
+      <StyledCircle color={finalColor} key={'color' + String(i)}></StyledCircle>
     )
   }
-  return solution
+  return circles
 }
 
 export default Books
