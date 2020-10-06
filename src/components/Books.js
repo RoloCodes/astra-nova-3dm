@@ -56,13 +56,14 @@ const StyledCircle = styled.div`
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background-color: ${({ color }) => `rgb(${color})` || 'black'};
+  background-color: ${({ color }) => color || 'black'};
+  transition: all 0.3s;
 `
 
 const displayQuantity = (quantity, initialQuantity, color) => {
   const circles = []
   for (let i = 0; i < initialQuantity; i++) {
-    let finalColor = quantity < i + 1 ? '80, 80, 80' : color
+    let finalColor = quantity < i + 1 ? 'rgba(50, 50, 50, .5)' : `rgb(${color})`
     circles.push(
       <StyledCircle color={finalColor} key={'color' + String(i)}></StyledCircle>
     )
