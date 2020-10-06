@@ -77,13 +77,18 @@ const StyledStudents = styled.div`
     border-collapse: collapse;
   }
 
+  tr:nth-child(odd) .student-name {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+
+  td,
+  th {
+    padding: 4px 8px;
+  }
+
   td {
     text-align: center;
     font-weight: 700;
-  }
-
-  tr:nth-child(odd) .student-name {
-    background-color: rgba(0, 0, 0, 0.1);
   }
 
   .student-name {
@@ -96,6 +101,8 @@ const StyledStudents = styled.div`
   .score-wrapper {
     text-align: right;
     padding-right: 6px;
+    font-size: 22px;
+    font-weight: bold;
   }
 
   .button-wrapper {
@@ -106,7 +113,8 @@ const StyledStudents = styled.div`
 
 const StyledTitle = styled.th`
   color: white;
-  padding: 2px 8px;
+  padding-left: 8px;
+  padding-right: 8px;
   text-transform: uppercase;
   min-width: 88px;
   background-color: ${({ color }) => `rgb(${color})` || 'transparent'};
