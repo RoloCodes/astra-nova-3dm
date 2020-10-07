@@ -38,6 +38,8 @@ const App = () => {
 
 const StyledApp = styled.main`
   margin-bottom: 40px;
+  padding-left: 16px;
+  padding-right: 16px;
 `
 
 export default App

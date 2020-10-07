@@ -1,9 +1,15 @@
 import React from 'react'
 import styled from 'styled-components'
+import logo from '../../public/optimize-logo.svg'
 
 const Instructions = () => {
   return (
     <StyledInstructions>
+      <div className="logo-row">
+        <div className="logo-wrapper">
+          <img src={logo} alt="Optimize Logo" />
+        </div>
+      </div>
       <h3>
         As summer readers pour into her library, Tara faces an optimization
         dilemma...
@@ -28,6 +34,24 @@ const Instructions = () => {
 const StyledInstructions = styled.div`
   margin: auto;
   max-width: 960px;
+
+  .logo-row {
+    display: flex;
+    justify-content: center;
+    border-bottom: 2px solid black;
+  }
+
+  .logo-wrapper {
+    box-sizing: content-box;
+    padding-top: 25px;
+    padding-bottom: 20px;
+    width: 130px;
+    height: 143px;
+
+    img {
+      width: 100%;
+    }
+  }
 
   h3 {
     font-size: 42px;
