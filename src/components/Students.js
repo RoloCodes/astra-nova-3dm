@@ -3,11 +3,13 @@ import styled from 'styled-components'
 import Button from './Button'
 import { clearStudentChoices, updateStudentChoice } from '../logic'
 
+import logo from '../../public/astra-nova-logo-full.png'
+
 const Students = ({ library, students, setStudents, score }) => {
   return (
     <StyledStudents>
       <h2>Students</h2>
-      <div className="table-wrapper">
+      <div className="table-wrapper" onTouchStart>
         <table>
           <thead>
             <tr className="titles">
@@ -55,6 +57,11 @@ const Students = ({ library, students, setStudents, score }) => {
           Clear All
         </Button>
       </div>
+      <div className="logo-wrapper">
+        <a href="https://astranova.org/">
+          <img src={logo} alt="Astra Nova Logo" />
+        </a>
+      </div>
     </StyledStudents>
   )
 }
@@ -62,6 +69,7 @@ const Students = ({ library, students, setStudents, score }) => {
 const StyledStudents = styled.div`
   margin: auto;
   max-width: 664px;
+  width: 100%;
 
   h2 {
     text-align: center;
@@ -75,6 +83,10 @@ const StyledStudents = styled.div`
   table {
     margin: auto;
     border-collapse: collapse;
+
+    @media (max-width: 768px) {
+      display: block;
+    }
   }
 
   tr:nth-child(odd) .student-name {
@@ -108,6 +120,16 @@ const StyledStudents = styled.div`
   .button-wrapper {
     display: flex;
     justify-content: center;
+  }
+
+  .logo-wrapper {
+    margin-top: 30px;
+    display: flex;
+    justify-content: flex-end;
+
+    img {
+      width: 150px;
+    }
   }
 `
 
