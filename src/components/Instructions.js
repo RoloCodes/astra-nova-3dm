@@ -16,7 +16,7 @@ const Instructions = () => {
       </h3>
       <p>
         Tara the librarian has a puzzle to solve, but it's a good problem to
-        have. Students want to read over the summer; however many students want
+        have. Students want to read over the summer; however, many students want
         to read the same books, and the library has a limited number of books to
         provide to students. Each student has ranked six books from
         <span> 1 (the book they want to read the most)</span> to
@@ -24,7 +24,7 @@ const Instructions = () => {
       </p>
       <div className="questions">
         Can you help Tara decide who will get each book? Her goal is to get as
-        many students as possible their highest ranked books. The library is as
+        many students as possible their best ranked books. The library is as
         follows:
       </div>
     </StyledInstructions>

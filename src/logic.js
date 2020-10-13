@@ -48,7 +48,7 @@ export const library = [
   },
   {
     id: 3,
-    name: 'To Kill A Mockingbird',
+    name: 'To Kill a Mockingbird',
     shortName: 'Mock',
     initialQuantity: 2,
     quantity: 2,
