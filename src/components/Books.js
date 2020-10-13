@@ -14,8 +14,8 @@ const Books = ({ library }) => {
         </div>
       ))}
       <p>
-        Click the numbers below to select the books you'd like each student to
-        receive.
+        <span className="instructions">Instructions:</span> Click the numbers
+        below to select the books you'd like each student to receive.
       </p>
     </StyledBooks>
   )
@@ -44,6 +44,11 @@ const StyledBooks = styled.div`
     flex: 1;
     display: flex;
     margin-left: 15px;
+  }
+
+  .instructions {
+    font-weight: bold;
+    color: rgb(225, 103, 55);
   }
 
   p {
