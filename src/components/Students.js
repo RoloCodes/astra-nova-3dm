@@ -79,10 +79,6 @@ const StyledStudents = styled.div`
   table {
     margin: auto;
     border-collapse: collapse;
-
-    @media (max-width: 768px) {
-      display: block;
-    }
   }
 
   tr:nth-child(odd) .student-name {
@@ -97,6 +93,11 @@ const StyledStudents = styled.div`
   td {
     text-align: center;
     font-weight: 700;
+  }
+
+  .table-wrapper {
+    overflow-x: scroll;
+    max-width: 100%;
   }
 
   .student-name {
@@ -153,25 +154,31 @@ const StyledSelection = styled.td`
   &::before {
     z-index: -10;
     background-color: white;
+    -webkit-tap-highlight-color: white;
   }
 
   &::after {
     z-index: -5;
-    background-color: ${({ active, color, index }) => {
+    ${({ active, color, index }) => {
       let alpha = 0
       index % 2 === 0 ? (alpha = 0.2) : (alpha = 0.1)
       active ? (alpha = 0.5) : null
-      return `rgba(${color}, ${alpha})`
-    }};
-  }
-
-  &:hover {
-    z-index: 10;
-    transform: scale(1.15);
+      return `
+        background-color: rgba(${color}, ${alpha});
+        -webkit-tap-highlight-color: rgba(${color}, ${alpha});
+      `
+    }}
   }
 
   &:active {
     transform: scale(1.07);
+  }
+
+  @media (min-width: 835px) {
+    &:hover {
+      z-index: 10;
+      transform: scale(1.15);
+    }
   }
 `
 
