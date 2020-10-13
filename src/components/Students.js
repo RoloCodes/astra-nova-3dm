@@ -3,66 +3,62 @@ import styled from 'styled-components'
 import Button from './Button'
 import { clearStudentChoices, updateStudentChoice } from '../logic'
 
-import logo from '../../public/astra-nova-logo-full.png'
-
 const Students = ({ library, students, setStudents, score }) => {
   return (
-    <StyledStudents>
-      <h2>Students</h2>
-      <div className="table-wrapper" onTouchStart>
-        <table>
-          <thead>
-            <tr className="titles">
-              <th></th>
-              {library.map(({ shortName, id, color }) => (
-                <StyledTitle key={`table-${id}`} color={color}>
-                  {shortName}
-                </StyledTitle>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-            {students.map(({ name, books, choice }, studentIndex) => (
-              <tr key={name}>
-                <th className="student-name">{name}</th>
-                {books.map((bookScore, choiceIndex) => (
-                  <StyledSelection
-                    className="points"
-                    key={name + bookScore}
-                    color={library[choiceIndex].color}
-                    index={studentIndex}
-                    active={choiceIndex === choice}
-                    onClick={() => {
-                      setStudents(
-                        updateStudentChoice(
-                          students,
-                          studentIndex,
-                          choiceIndex,
-                          library
-                        )
-                      )
-                    }}
-                  >
-                    {bookScore}
-                  </StyledSelection>
+    <>
+      <StyledStudents>
+        <h2>Students</h2>
+        <div className="table-wrapper">
+          <table>
+            <thead>
+              <tr className="titles">
+                <th></th>
+                {library.map(({ shortName, id, color }) => (
+                  <StyledTitle key={`table-${id}`} color={color}>
+                    {shortName}
+                  </StyledTitle>
                 ))}
               </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-      <div className="score-wrapper">Score: {score}</div>
-      <div className="button-wrapper">
-        <Button onClick={() => setStudents(clearStudentChoices(students))}>
-          Clear All
-        </Button>
-      </div>
-      <div className="logo-wrapper">
-        <a href="https://astranova.org/">
-          <img src={logo} alt="Astra Nova Logo" />
-        </a>
-      </div>
-    </StyledStudents>
+            </thead>
+            <tbody>
+              {students.map(({ name, books, choice }, studentIndex) => (
+                <tr key={name}>
+                  <th className="student-name">{name}</th>
+                  {books.map((bookScore, choiceIndex) => (
+                    <StyledSelection
+                      className="points"
+                      key={name + bookScore}
+                      color={library[choiceIndex].color}
+                      index={studentIndex}
+                      active={choiceIndex === choice}
+                      onClick={() => {
+                        setStudents(
+                          updateStudentChoice(
+                            students,
+                            studentIndex,
+                            choiceIndex,
+                            library
+                          )
+                        )
+                      }}
+                    >
+                      {bookScore}
+                    </StyledSelection>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <div className="score-wrapper">Score: {score}</div>
+        <div className="button-wrapper">
+          <Button onClick={() => setStudents(clearStudentChoices(students))}>
+            Clear All
+          </Button>
+        </div>
+      </StyledStudents>
+      <div className="logo-wrapper"></div>
+    </>
   )
 }
 
@@ -120,16 +116,6 @@ const StyledStudents = styled.div`
   .button-wrapper {
     display: flex;
     justify-content: center;
-  }
-
-  .logo-wrapper {
-    margin-top: 30px;
-    display: flex;
-    justify-content: flex-end;
-
-    img {
-      width: 150px;
-    }
   }
 `
 

@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
+
 import GlobalStyles from './styles/GlobalStyles'
 import Instructions from './components/Instructions'
 import Books from './components/Books'
 import Students from './components/Students'
+import Footer from './components/Footer'
+
 import {
   library as seedLibrary,
   students as seedStudents,
@@ -32,6 +35,7 @@ const App = () => {
         setStudents={setStudents}
         score={score}
       />
+      <Footer />
     </StyledApp>
   )
 }
