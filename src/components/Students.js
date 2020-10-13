@@ -121,13 +121,51 @@ const StyledTitle = styled.th`
 `
 
 const StyledSelection = styled.td`
+  position: relative;
   cursor: pointer;
-  background-color: ${({ active, color, index }) => {
-    let alpha = 0
-    index % 2 === 0 ? (alpha = 0.2) : (alpha = 0.1)
-    active ? (alpha = 0.5) : null
-    return `rgba(${color}, ${alpha})`
-  }};
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
+  transition: all 0.1s;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: all 0.1;
+    backface-visibility: hidden;
+  }
+
+  &::before {
+    z-index: -10;
+    background-color: white;
+  }
+
+  &::after {
+    z-index: -5;
+    background-color: ${({ active, color, index }) => {
+      let alpha = 0
+      index % 2 === 0 ? (alpha = 0.2) : (alpha = 0.1)
+      active ? (alpha = 0.5) : null
+      return `rgba(${color}, ${alpha})`
+    }};
+  }
+
+  &:hover {
+    z-index: 10;
+    transform: scale(1.15);
+  }
+
+  &:active {
+    transform: scale(1.07);
+  }
 `
 
 export default Students
